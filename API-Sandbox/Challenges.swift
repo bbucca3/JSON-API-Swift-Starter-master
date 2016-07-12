@@ -91,21 +91,18 @@ internal func exerciseThree() {
     let allMoviesData = moviesData["feed"]["entry"].arrayValue
     
     /*
-     
      Figure out a way to turn the allMoviesData array into Movie structs!
-     
      */
     
     var allMovies: [Movie] = []
     
     for movie in allMoviesData {
         
-        //parse/create movie struct
+        //each currentMovie equals Movie struct
         let currentMovie = Movie(json: movie)
-        //add struct into movies array
+        //add/append each struct into allMovies array of structs
         allMovies.append(currentMovie)
         
-        //print(currentMovie)
     }
     
     for movie in allMovies {
@@ -133,7 +130,7 @@ internal func exerciseThree() {
      movie that costs less than $15. Iterate over all the values in `allMovies` to check!
      
      */
-//    print("The following movies are cost less than $15:")
+//    print("The following movies cost less than $15:")
     
     for movie in allMovies {
         if(movie.price < 15.00){
